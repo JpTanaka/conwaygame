@@ -1,0 +1,17 @@
+.boardrow {
+  display: flex;
+
+}
+.board {
+  display:flex;
+  flex-direction: column;
+}
+.square0 {
+  background-color: darkslategray;
+  width: 2%;
+  aspect-ratio: 1/1;
+  border: 1px solid white;
+}
+.square1 {
+  background-color: orange;
+}
