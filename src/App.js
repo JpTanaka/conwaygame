@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
-
+export default App;
 
 function Square(props) {
   const squareclassname = "square " + (props.squarevalue ? "alive" : "dead")
@@ -49,21 +49,50 @@ function Board() {
   );
 }
 
-function BeginButton() {
+function BeginButton(props) {
   return (
-    <button class="button-30 begin" role="button">
+    <button class="button-30 begin" role="button" onClick={props.isToggle}>
       Begin
     </button>
 
     )
 }
 
+function Counter(props) {
+  
+  const counterphrase = "Counter: " + props.counter + (props.toggle? " true":" false")
+  // 
+  return (
+    <div>
+    {counterphrase}
+    </div>
+  )
+}
+
 function App() {
+  const [counter, setCounter] = useState(0)
+  const [toggle, setToggle] = useState(false)
+  function isToggle() {
+    setToggle(prevState => !prevState)
+  }
+  useEffect(()=> {
+    if (toggle) {
+        const interval = setInterval(() => {
+            setCounter(counter=>counter+1);
+
+        }, 1000)  
+        return () => clearInterval(interval);}
+    }
+, [toggle])
+  
+//
   return (
     <>
     <div className="container">
-    < BeginButton  />
-    <Board />
+      {counter}
+      < Counter counter = {counter} setCounter = {setCounter} toggle = {toggle} />
+    < BeginButton isToggle = {isToggle} />  
+    < Board />
     
     </div>
 
@@ -71,6 +100,6 @@ function App() {
   );
 }
 
-export default App;
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
