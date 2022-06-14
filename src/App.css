@@ -7,9 +7,43 @@
   flex-direction: column;
   width: -webkit-fill-available;
 }
+
+@font-face {
+  font-family: 'pixel_emulatorregular';
+  src: url('font/webfontkit-20220614-091846/pixelemulator-xq08-webfont.woff2') format('woff2'),
+       url('font/webfontkit-20220614-091846/pixelemulator-xq08-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title-game {
+  display:flex;
+  flex-direction: column;
+  font-family: 'pixel_emulatorregular';
+  font-size: xx-large;
+  color:#36395A;
+  margin:10px;
+}
+
+.title-game::after {
+  content:"life";
+  color:rgb(251, 255, 29);
+}
+
+.title-game.life {
+
+  color:rgb(251, 255, 29);
+}
+.title {
+  display:flex;
+  width: 100vw;
+  background-color: #2425;
+  justify-content: center;
+}
+
 .square {
   background-color: darkslategray;
-  width: 2%;
+  width: max(2%,20px);
   aspect-ratio: 1/1;
   border: 1px solid rgb(158, 163, 172);
   color:white;
