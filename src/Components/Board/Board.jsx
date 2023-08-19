@@ -38,6 +38,7 @@ export const Board = ({ board, setBoard, isRunning }) => {
 
   const handleClick = (row, collumn) => {
     const newBoard = [...board];
+    console.log(row, collumn);
     newBoard[row][collumn] = newBoard[row][collumn] ? 0 : 1;
     setBoard(newBoard);
   };
@@ -50,7 +51,7 @@ export const Board = ({ board, setBoard, isRunning }) => {
             {row.map((item, indexCollumn) => (
               <div
                 key={indexCollumn}
-                onClick={handleClick(indexRow, indexCollumn)}
+                onClick={() => handleClick(indexRow, indexCollumn)}
                 className={classNames("square", {
                   alive: item === 0,
                 })}
