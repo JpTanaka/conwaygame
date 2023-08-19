@@ -1,0 +1,26 @@
+
+.boardContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+
+}
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.row {
+    display: flex;
+}
+
+.square {
+    background-color: blue;
+    border: solid 1px gray;
+    aspect-ratio: 1;
+    width: clamp(1rem, 2rem ,4rem);
+}
+
+.alive {
+    background-color: gray;
+}
