@@ -26,6 +26,12 @@
     width: 1.5rem;
 }
 
+.square:hover {
+    border: 1px solid white;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
 .alive {
     background-color: white;
 }
