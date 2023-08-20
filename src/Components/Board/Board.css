@@ -3,24 +3,29 @@
     width: 80%;
     display: flex;
     justify-content: center;
-
 }
+
 .board {
+    border: 1px solid gray;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding: 1px 1px 0 0;
+    height: fit-content; 
+    max-width: 100%;
 }
 .row {
     display: flex;
+    width: 100%;
 }
 
 .square {
-    background-color: blue;
-    border: solid 1px gray;
+    background-color: black;
+    margin: -1px -1px 0 0;
+    box-sizing: content-box;
     aspect-ratio: 1;
-    width: clamp(1rem, 2rem ,4rem);
+    width: 1.5rem;
 }
 
 .alive {
-    background-color: gray;
+    background-color: white;
 }

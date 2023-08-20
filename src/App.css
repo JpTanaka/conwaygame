@@ -14,10 +14,72 @@
   display:flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content-container {
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 2rem;
+  overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.content-container::-webkit-scrollbar {
+  display: none;
 }
 
 .title {
   display:flex;
   justify-content: center;
+  font-family: 'pixel_emulatorregular';
+  font-size: xx-large;
+  color: white;
+  line-height: 1.5;
+}
+
+
+.startButton {
+  padding: 1rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: white;
+  /* position: fixed; */
+  bottom: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.startButton:hover {
+  transform: translateY(-1px);
+  transform: scale(1.05);
+  transition-duration: 0.25s;
+}
+
+.rules-title {
+  display:flex;
+  justify-content: center;
+  font-family: 'pixel_emulatorregular';
+  font-size: large;
+  color: white;
+  line-height: 1.5;
+}
+
+
+
+
+.rules-list {
+  color: white;
+  font-family: 'pixel_emulatorregular';
+  font-weight: 200;
+
+
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./Board.css";
 import classNames from "classnames";
 
@@ -6,39 +6,38 @@ export const Board = ({ board, setBoard, isRunning }) => {
   useEffect(() => {
     if (isRunning) {
       const interval = setInterval(() => {
-        setBoard((board) => nextGen(board));
+        setBoard((board) => nextGeneration(board));
       }, 500);
       return () => clearInterval(interval);
     }
-  }, [isRunning]);
+  }, [isRunning, setBoard]);
 
-  function nextGen(cells) {
-    var get = function (i, j) {
-      return (cells[i] && cells[i][j]) | 0;
+  const nextGeneration = (board) => {
+    const getCell = (i, j) => {
+      return (board[i] && board[i][j]) | 0;
     };
 
-    cells = cells.map(function (row, i) {
-      return row.map(function (alive, j) {
-        var neighbors =
-          get(i - 1, j - 1) +
-          get(i - 1, j) +
-          get(i - 1, j + 1) +
-          get(i, j - 1) +
-          get(i, j + 1) +
-          get(i + 1, j - 1) +
-          get(i + 1, j) +
-          get(i + 1, j + 1);
+    board = board.map((row, i) => {
+      return row.map((alive, j) => {
+        const neighbors =
+          getCell(i - 1, j - 1) +
+          getCell(i - 1, j) +
+          getCell(i - 1, j + 1) +
+          getCell(i, j - 1) +
+          getCell(i, j + 1) +
+          getCell(i + 1, j - 1) +
+          getCell(i + 1, j) +
+          getCell(i + 1, j + 1);
 
         return (neighbors === 3 || (neighbors === 2 && alive)) | 0;
       });
     });
 
-    return cells;
-  }
+    return board;
+  };
 
   const handleClick = (row, collumn) => {
     const newBoard = [...board];
-    console.log(row, collumn);
     newBoard[row][collumn] = newBoard[row][collumn] ? 0 : 1;
     setBoard(newBoard);
   };
@@ -53,11 +52,9 @@ export const Board = ({ board, setBoard, isRunning }) => {
                 key={indexCollumn}
                 onClick={() => handleClick(indexRow, indexCollumn)}
                 className={classNames("square", {
-                  alive: item === 0,
+                  alive: item,
                 })}
-              >
-                {item}
-              </div>
+              />
             ))}
           </div>
         ))}
