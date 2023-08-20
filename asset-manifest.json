@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/conwaygame/static/css/main.19146c24.css",
-    "main.js": "/conwaygame/static/js/main.1e9d1702.js",
+    "main.css": "/conwaygame/static/css/main.e395051d.css",
+    "main.js": "/conwaygame/static/js/main.dc174198.js",
     "static/js/787.90cf535a.chunk.js": "/conwaygame/static/js/787.90cf535a.chunk.js",
     "static/media/pixelemulator-xq08-webfont.woff": "/conwaygame/static/media/pixelemulator-xq08-webfont.c698c9f677d450a7ed8e.woff",
     "static/media/pixelemulator-xq08-webfont.woff2": "/conwaygame/static/media/pixelemulator-xq08-webfont.230ffc6311299cce8a41.woff2",
     "index.html": "/conwaygame/index.html",
-    "main.19146c24.css.map": "/conwaygame/static/css/main.19146c24.css.map",
-    "main.1e9d1702.js.map": "/conwaygame/static/js/main.1e9d1702.js.map",
+    "main.e395051d.css.map": "/conwaygame/static/css/main.e395051d.css.map",
+    "main.dc174198.js.map": "/conwaygame/static/js/main.dc174198.js.map",
     "787.90cf535a.chunk.js.map": "/conwaygame/static/js/787.90cf535a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.19146c24.css",
-    "static/js/main.1e9d1702.js"
+    "static/css/main.e395051d.css",
+    "static/js/main.dc174198.js"
   ]
 }
