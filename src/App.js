@@ -55,14 +55,14 @@ export const App = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className="bottom-bar">
-        <button
-          className="startButton"
-          onClick={() => setIsRunning(!isRunning)}
-        >
-          {isRunning ? <Pause /> : <PlayArrow />}
-        </button>
+        <div className="bottom-bar">
+          <button
+            className="startButton"
+            onClick={() => setIsRunning(!isRunning)}
+          >
+            {isRunning ? <Pause /> : <PlayArrow />}
+          </button>
+        </div>
       </div>
     </div>
   );
